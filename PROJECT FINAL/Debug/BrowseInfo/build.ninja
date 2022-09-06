@@ -1,0 +1,100 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++D$:\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++D$:\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = D$:\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++D$:\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = D$:\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++D$:\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\cstartup_M.c" -xcl_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.xcl" -macro_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.tmp" -icc_path D$:\arm\bin\iccarm.exe
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\cstartup_M.c" -o "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.tmp"
+  rspfile_name = C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.xcl.rsp
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\DIO.c" -xcl_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.xcl" -macro_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.tmp" -icc_path D$:\arm\bin\iccarm.exe
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\DIO.c" -o "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.tmp"
+  rspfile_name = C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.xcl.rsp
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\LEDS_TRAFFIC_INIT.c" -xcl_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.xcl" -macro_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.tmp" -icc_path D$:\arm\bin\iccarm.exe
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\LEDS_TRAFFIC_INIT.c" -o "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.tmp"
+  rspfile_name = C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.xcl.rsp
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\main.c" -xcl_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.xcl" -macro_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.tmp" -icc_path D$:\arm\bin\iccarm.exe
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\main.c" -o "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.tmp"
+  rspfile_name = C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\systickk.c" -xcl_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.xcl" -macro_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.tmp" -icc_path D$:\arm\bin\iccarm.exe
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\systickk.c" -o "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.tmp"
+  rspfile_name = C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.xcl.rsp
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Timer0.c" -xcl_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.xcl" -macro_file "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.tmp" -icc_path D$:\arm\bin\iccarm.exe
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Timer0.c" -o "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.tmp"
+  rspfile_name = C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.xcl.rsp
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.pbi : INDEXER C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.xcl |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\cstartup_M.c
+  flags = "-out=C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.pbi" -f "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.xcl"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.pbi : INDEXER C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.xcl |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\DIO.c
+  flags = "-out=C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.pbi" -f "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.xcl"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.pbi : INDEXER C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.xcl |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\LEDS_TRAFFIC_INIT.c
+  flags = "-out=C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.pbi" -f "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.xcl"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\main.c
+  flags = "-out=C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.pbi" -f "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.xcl"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.pbi : INDEXER C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.xcl |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\systickk.c
+  flags = "-out=C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.pbi" -f "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.xcl"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.pbi : INDEXER C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.xcl |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Timer0.c
+  flags = "-out=C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.pbi" -f "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.xcl"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver.pbw : MAKEBROWSE C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver.pbd
+  flags = "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver.pbd" -output "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver.pbw"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part0.pbi : PDBLINK C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.pbi |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.pbi
+  flags = -M "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part0.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\cstartup_M.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\DIO.pbi"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part1.pbi : PDBLINK C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.pbi |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.pbi
+  flags = -M "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part1.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\LEDS_TRAFFIC_INIT.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main.pbi"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part2.pbi : PDBLINK C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.pbi |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.pbi
+  flags = -M "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part2.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\systickk.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\Timer0.pbi"
+
+build C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver.pbd : PDBLINK C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part0.pbi |  $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part1.pbi $
+C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part2.pbi
+  flags = -M "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver.pbd" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part0.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part1.pbi" "C$:\Users\EGYPT_LAPTOP\Desktop\gded\PROJECT$ FINAL\Debug\BrowseInfo\main_driver_part2.pbi"
+
